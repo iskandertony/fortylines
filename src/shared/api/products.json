@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Apple iPhone 13",
+        "image": "https://via.placeholder.com/150",
+        "category": "Smartphones",
+        "price": 999
+    },
+    {
+        "id": 2,
+        "name": "Samsung Galaxy S21",
+        "image": "https://via.placeholder.com/150",
+        "category": "Smartphones",
+        "price": 899
+    },
+    {
+        "id": 3,
+        "name": "AirPods Pro",
+        "image": "https://via.placeholder.com/150",
+        "category": "Headphones",
+        "price": 249
+    }
+]

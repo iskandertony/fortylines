@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# Products App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Тестовое задание: интерфейс для просмотра и фильтрации списка продуктов с возможностью добавления в избранное.
 
-## Available Scripts
+## Функционал
 
-In the project directory, you can run:
+- Просмотр списка продуктов (название, изображение, категория, цена).
+- Поиск по названию.
+- Фильтрация по категориям.
+- Добавление в избранное (сохранение в localStorage).
+- Отображение только избранных продуктов (переключатель).
+- Адаптивная верстка на базе Ant Design Grid.
 
-### `npm start`
+## Технологии
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **React** + **TypeScript**
+- **Redux Toolkit** (RTK) + `react-redux`
+- **CSS Modules**
+- **Ant Design**
+- (Опционально: `json-server` для моковых данных)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Структура проекта (FSD)
 
-### `npm test`
+src/ ├── app/ # Инициализация приложения, store, ... ├── entities/ # Бизнес-сущность "product" ├── features/ # Фичи (filters, favorites) ├── pages/ # Страницы (ProductsPage) ├── shared/ # Общие ресурсы (api, типы, утилиты) └── index.tsx # Точка входа
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Установка и запуск
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash```
+git clone https://github.com/your-username/products-app.git
+cd products-app
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Запуск проекта
+npm run start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+##
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+На этом **проект готов**:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Все ключевые пункты задания выполнены.  
+2. Приложение корректно работает: поиск, фильтры, избранное.  
+3. Код структурирован по FSD.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
