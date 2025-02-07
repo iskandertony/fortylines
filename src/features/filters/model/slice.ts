@@ -1,11 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-// features/filters/model/slice.ts
-
 interface FiltersState {
     searchQuery: string;
     selectedCategory: string;
-    showOnlyFavorites: boolean; // <-- добавляем
+    showOnlyFavorites: boolean;
 }
 
 const initialState: FiltersState = {

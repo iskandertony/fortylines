@@ -1,17 +1,18 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Card, Button } from 'antd';
 import { Product } from '../../model/types';
-import { RootState, AppDispatch } from '../../../../app/store';
+import { useAppDispatch, useAppSelector } from '../../../../app/hooks';
 import { toggleFavorite } from '../../../../features/favorites/model/slice';
+
+import styles from './ProductCard.module.css';
 
 type ProductCardProps = {
     product: Product;
 };
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-    const dispatch = useDispatch<AppDispatch>();
-    const favorites = useSelector((state: RootState) => state.favorites.productIds);
+    const dispatch = useAppDispatch();
+    const favorites = useAppSelector((state) => state.favorites.productIds);
 
     const isFavorite = favorites.includes(product.id);
 
@@ -21,9 +22,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
     return (
         <Card
+            className={styles.card}
             hoverable
-            cover={<img alt={product.name} src={product.image} />}
-            style={{ width: '100%' }}
+            cover={
+                <img
+                    className={styles.cardCover}
+                    alt={product.name}
+                    src={product.image}
+                />
+            }
         >
             <Card.Meta
                 title={product.name}

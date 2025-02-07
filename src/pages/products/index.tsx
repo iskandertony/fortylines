@@ -1,8 +1,5 @@
-// src/pages/products/index.tsx
-
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../../app/store';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { fetchProducts } from '../../entities/product/model/slice';
 import { selectFilteredProducts } from '../../features/filters/model/selectors';
 import { FiltersPanel } from '../../features/filters/ui/FiltersPanel';
@@ -11,10 +8,9 @@ import { ProductCard } from '../../entities/product/ui/ProductCard';
 import { Row, Col, Spin, Alert } from 'antd';
 
 export const ProductsPage: React.FC = () => {
-    const dispatch = useDispatch<AppDispatch>();
-    const { status, error } = useSelector((state: RootState) => state.products);
-
-    const filteredProducts = useSelector(selectFilteredProducts);
+    const dispatch = useAppDispatch();
+    const { status, error } = useAppSelector((state) => state.products);
+    const filteredProducts = useAppSelector(selectFilteredProducts);
 
     useEffect(() => {
         dispatch(fetchProducts());

@@ -2,21 +2,21 @@
     {
         "id": 1,
         "name": "Apple iPhone 13",
-        "image": "https://via.placeholder.com/150",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDEvatReGiTMRkqAO1rtghl2w1N_K2QXs9aw&s",
         "category": "Smartphones",
         "price": 999
     },
     {
         "id": 2,
         "name": "Samsung Galaxy S21",
-        "image": "https://via.placeholder.com/150",
+        "image": "https://m.media-amazon.com/images/I/61XyNdmvr6L.jpg",
         "category": "Smartphones",
         "price": 899
     },
     {
         "id": 3,
         "name": "AirPods Pro",
-        "image": "https://via.placeholder.com/150",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLe-RWnt78dcID8PrK4OuGaj79JF0iJDbG6Q&s",
         "category": "Headphones",
         "price": 249
     }

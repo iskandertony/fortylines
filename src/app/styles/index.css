@@ -5,6 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #e9f0f5;
+  padding: 40px;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
 }
 
 code {

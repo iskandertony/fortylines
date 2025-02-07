@@ -1,12 +1,6 @@
-// model/slice.ts
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { Product } from './types';
-
-// Если используем статический JSON-файл:
 import productsData from '../../../shared/api/products.json';
-
-// Если используем json-server, то будем делать fetch к эндпоинту:
-// const PRODUCTS_URL = 'http://localhost:3001/products';
 
 interface ProductsState {
     items: Product[];
@@ -20,15 +14,13 @@ const initialState: ProductsState = {
     error: null,
 };
 
-// Вариант A: Если хотим имитировать запрос, но у нас просто JSON-файл:
 export const fetchProducts = createAsyncThunk<Product[]>(
     'products/fetchProducts',
     async () => {
-        // Имитация асинхронной загрузки
         return new Promise<Product[]>((resolve) => {
             setTimeout(() => {
                 resolve(productsData as Product[]);
-            }, 500); // небольшая задержка для наглядности
+            }, 500);
         });
     }
 );

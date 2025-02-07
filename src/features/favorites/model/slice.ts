@@ -1,9 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-/**
- * Тип для состояния избранного:
- * Храним массив id продуктов.
- */
 interface FavoritesState {
     productIds: number[];
 }
@@ -14,10 +10,6 @@ const initialState: FavoritesState = {
     productIds: loadFromLocalStorage(),
 };
 
-/**
- * Пытаемся загрузить массив id из localStorage.
- * Если нет, возвращаем пустой массив.
- */
 function loadFromLocalStorage(): number[] {
     try {
         const data = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -30,9 +22,6 @@ function loadFromLocalStorage(): number[] {
     return [];
 }
 
-/**
- * Сохраняем массив id в localStorage.
- */
 function saveToLocalStorage(productIds: number[]) {
     try {
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(productIds));
@@ -45,20 +34,13 @@ const favoritesSlice = createSlice({
     name: 'favorites',
     initialState,
     reducers: {
-        /**
-         * Добавляет продукт в избранное.
-         * Если он уже есть — убирает его из избранного (toggle).
-         */
         toggleFavorite(state, action: PayloadAction<number>) {
             const productId = action.payload;
             if (state.productIds.includes(productId)) {
-                // Удаляем
                 state.productIds = state.productIds.filter((id) => id !== productId);
             } else {
-                // Добавляем
                 state.productIds.push(productId);
             }
-            // Синхронизируем с localStorage
             saveToLocalStorage(state.productIds);
         },
     },
